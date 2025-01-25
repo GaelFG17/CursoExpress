@@ -58,7 +58,7 @@ app.get('/people/:id', (req, res) => {
   });
 })
 
-app.get('/people/:peopleId/categories/categorieId/products/idProduct', (req, res) => {
+app.get('/people/:peopleId/categories/:categorieId/products/:idProduct', (req, res) => {
   const { peopleId, categorieId, idProduct } = req.params;
   res.json({
     peopleId,
