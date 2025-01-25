@@ -27,6 +27,10 @@ app.get('/products', (req, res) => {
   res.json(products);
 })
 
+app.get('products/filter', (req, res) => {
+  res.send('Yo soy un filter');
+})
+
 app.get('/products/:id', (req, res) => {
   const { id } = req.params;
   res.json({
