@@ -32,6 +32,14 @@ app.get('/products/:id', (req, res) => {
   })
 })
 
+app.get('/categories/:categoryid/products/:idProduct', (req, res) => {
+  const { categoryid, idProduct } = req.params;
+  res.json({
+    categoryid,
+    idProduct,
+  });
+})
+
 app.listen(port, () => {
   console.log(`Server corriendo en http://localhost:${port}`);
 });
