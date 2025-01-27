@@ -12,14 +12,6 @@ app.get('/nueva-ruta', (req, res) => {
   res.send('Hola, soy una nueva ruta');
 })
 
-app.get('/categories/:categoryid/products/:idProduct', (req, res) => {
-  const { categoryid, idProduct } = req.params;
-  res.json({
-    categoryid,
-    idProduct,
-  });
-})
-
 app.get('/people', (req, res) => {
   res.json({
     name: 'Juan',
