@@ -27,7 +27,7 @@ app.get('/products', (req, res) => {
   res.json(products);
 })
 
-app.get('products/filter', (req, res) => {
+app.get('/products/filter', (req, res) => {
   res.send('Yo soy un filter');
 })
 
