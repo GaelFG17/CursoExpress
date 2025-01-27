@@ -12,33 +12,6 @@ app.get('/nueva-ruta', (req, res) => {
   res.send('Hola, soy una nueva ruta');
 })
 
-app.get('/people', (req, res) => {
-  res.json({
-    name: 'Juan',
-    lastname: 'Perez',
-    age: 30
-  });
-})
-
-app.get('/people/:id', (req, res) => {
-  const { id } = req.params;
-  res.json({
-    id,
-    name: 'Juan',
-    lastname: 'Perez',
-    age: 30
-  });
-})
-
-app.get('/people/:peopleId/categories/:categorieId/products/:idProduct', (req, res) => {
-  const { peopleId, categorieId, idProduct } = req.params;
-  res.json({
-    peopleId,
-    categorieId,
-    idProduct
-  });
-})
-
 app.get('/users', (req, res) => {
   const { limit, offset } = req.query;
   if (limit && offset) {
