@@ -3,7 +3,7 @@ const { faker } = require('@faker-js/faker');
 
 const router = express.Router();
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.json({
     name: 'Juan',
     lastname: 'Perez',
@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   });
 })
 
-app.get('//:id', (req, res) => {
+router.get('//:id', (req, res) => {
   const { id } = req.params;
   res.json({
     id,
@@ -21,7 +21,7 @@ app.get('//:id', (req, res) => {
   });
 })
 
-app.get('/:peopleId/categories/:categorieId/products/:idProduct', (req, res) => {
+router.get('/:peopleId/categories/:categorieId/products/:idProduct', (req, res) => {
   const { peopleId, categorieId, idProduct } = req.params;
   res.json({
     peopleId,

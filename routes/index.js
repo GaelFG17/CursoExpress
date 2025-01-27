@@ -1,8 +1,7 @@
-const { mode } = require('crypto-js');
 const productsRouter = require('./productsRouter');
 const categoriesRouter = require('./categoriesRouter');
 const peopleRouter = require('./peopleRouter');
-const usersRouter = require('./usersRouter');
+const usersRouter = require('./userRouter');
 
 function routerApi(app){
   app.use('/products', productsRouter);
