@@ -27,15 +27,25 @@ router.get('/:id', (req, res) => {
     id,
     name: 'Producto 1',
     precio: 1500
-  })
-})
+  });
+});
 
 router.post('/', (req, res) => {
   const body = req.body;
   res.json({
     message: 'created',
     data: body
-  })
-})
+  });
+});
+
+router.patch('/:id', (req, res) => {
+  const { id } = req.params;
+  const body = req.body;
+  res.json({
+    id,
+    message: 'updated',
+    data: body
+  });
+});
 
 module.exports = router;
