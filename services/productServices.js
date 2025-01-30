@@ -22,7 +22,7 @@ class ProductService{
   }
 
   find(){
-
+    return this.products;
   }
 
   findOne(){
