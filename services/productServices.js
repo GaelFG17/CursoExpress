@@ -9,7 +9,7 @@ class ProductService{
   generate(){
     const limit = 100;
     for (let index = 0; index < limit; index++) {
-      products.push({
+      this.products.push({
         id : faker.string.uuid(),
         name: faker.commerce.productName(),
         price: parseInt(faker.commerce.price(), 10),
