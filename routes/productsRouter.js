@@ -23,7 +23,7 @@ router.get('/filter', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const { id } = req.params;
-  if (id == 999) {
+  if (id == '999') {
     res.status(404).json({
       message: 'not found'
     });
