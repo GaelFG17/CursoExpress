@@ -10,6 +10,7 @@ class ProductService{
     const limit = 100;
     for (let index = 0; index < limit; index++) {
       products.push({
+        id : faker.string.uuid(),
         name: faker.commerce.productName(),
         price: parseInt(faker.commerce.price(), 10),
         image : faker.image.url()
@@ -25,8 +26,8 @@ class ProductService{
     return this.products;
   }
 
-  findOne(){
-
+  findOne(id){
+    return this.products.find(item => item.id === id);
   }
 
   update(){
