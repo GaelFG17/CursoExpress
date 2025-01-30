@@ -1,11 +1,13 @@
+const { faker } = require('@faker-js/faker');
 class ProductService{
 
   constructor(){
     this.products = [];
+    this.generate()
   }
 
   generate(){
-    const limit = size || 10;
+    const limit = 100;
     for (let index = 0; index < limit; index++) {
       products.push({
         name: faker.commerce.productName(),
