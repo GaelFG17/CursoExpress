@@ -23,11 +23,17 @@ router.get('/filter', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const { id } = req.params;
-  res.json({
-    id,
-    name: 'Producto 1',
-    precio: 1500
-  });
+  if (id == 999) {
+    res.status(404).json({
+      message: 'not found'
+    });
+  }else {
+    res.json({
+      id,
+      name: 'Producto 1',
+      precio: 1500
+    });
+  }
 });
 
 router.post('/', (req, res) => {
