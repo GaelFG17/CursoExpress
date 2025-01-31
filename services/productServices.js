@@ -25,6 +25,7 @@ class ProductService{
       ...data
     }
     this.products.push(newProduct);
+    return newProduct;
   }
 
   find(){

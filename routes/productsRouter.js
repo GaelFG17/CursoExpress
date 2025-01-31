@@ -1,6 +1,7 @@
 const express = require('express');
 
 const ProductService = require('./../services/productServices');
+const { ne } = require('faker/lib/locales');
 const service = new ProductService();
 
 const router = express.Router();
@@ -22,10 +23,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   const body = req.body;
-  res.status(201).json({
-    message: 'created',
-    data: body
-  });
+  const newProduct = service.create(body);
+  res.status(201).json(newProduct);
 });
 
 router.patch('/:id', (req, res) => {
