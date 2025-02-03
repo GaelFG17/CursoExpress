@@ -3,6 +3,8 @@ const { faker } = require('@faker-js/faker');
 const routerApi = require('./routes');
 const router = require('./routes/productsRouter');
 
+const {logErrors, errorHandler} = require('./middlewares/errorHandle');
+
 const app = express();
 const port = 3000;
 
