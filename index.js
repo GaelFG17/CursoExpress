@@ -19,6 +19,8 @@ app.get('/nueva-ruta', (req, res) => {
 })
 
 routerApi(app);
+app.use(logErrors);
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Server corriendo en http://localhost:${port}`);
