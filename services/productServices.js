@@ -43,7 +43,11 @@ class ProductService{
     if(!product){
       throw boom.notFound('Product not found');
     }
-    return product;
+    if(product.isBlock){
+      throw boom.conflict('Product is blocked');
+    }else{
+      return product;
+    }
   }
 
   async update(id, changes){
