@@ -3,7 +3,7 @@ const { faker } = require('@faker-js/faker');
 const routerApi = require('./routes');
 const router = require('./routes/productsRouter');
 
-const {logErrors, errorHandler} = require('./middlewares/errorHandle');
+const {logErrors, errorHandler, boomErrorHandler} = require('./middlewares/errorHandle');
 
 const app = express();
 const port = 3000;
@@ -20,6 +20,7 @@ app.get('/nueva-ruta', (req, res) => {
 
 routerApi(app);
 app.use(logErrors);
+app.use(boomErrorHandler);
 app.use(errorHandler);
 
 app.listen(port, () => {
